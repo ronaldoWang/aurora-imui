@@ -13,7 +13,7 @@ import android.util.Log;
 import android.util.SparseIntArray;
 import android.view.Surface;
 import android.view.TextureView;
-import android.widget.RelativeLayout;
+import android.widget.FrameLayout;
 
 import java.io.File;
 import java.io.FileOutputStream;
@@ -89,7 +89,7 @@ public class CameraOld implements CameraSupport {
         /*根据选出的PictureSize重新设置SurfaceView大小*/
         float w = mPreviewSize.width;
         float h = mPreviewSize.height;
-        mTextureView.setLayoutParams(new RelativeLayout.LayoutParams((int) (height * (w / h)), height));
+        mTextureView.setLayoutParams(new FrameLayout.LayoutParams((int) (height * (w / h)), height));
 
         params.setJpegQuality(100); // 设置照片质量
         if (params.getSupportedFocusModes().contains(Camera.Parameters.FOCUS_MODE_CONTINUOUS_PICTURE)) {
